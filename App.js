@@ -6,26 +6,7 @@ import {
   Text,
   View
 } from 'react-native';
-import Login from './Login';
-import Router from './Router';
-import { StackNavigator } from 'react-navigation';
+import RootS from './Router';
  
  
-export default App = StackNavigator(
-{
- 
- Login: {
-    screen: Login,
-  navigationOptions:{
-    header:null
-  },
-   },
- 
- Router: { 
-   screen: Router,
-  navigationOptions:{
-    header:null
-  }, }
- 
- 
-});
+export default RootS

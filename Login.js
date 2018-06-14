@@ -12,10 +12,14 @@ import {
 } from 'react-native';
 import RootTS from './Router';
 import {StackNavigator} from 'react-navigation';
-
+import SplashScreen from 'react-native-splash-screen';
 
 
   export default class Login extends Component {
+
+    componentWillMount() {
+        SplashScreen.hide();
+    }
     state = {
         email: 's',
         password: 's',

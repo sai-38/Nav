@@ -44,6 +44,16 @@ export default class Location extends Component{
       
             <View style={{flex:1,backgroundColor:'white'}}>
                   <ScrollView>
+                  <View style={{paddingTop:10,paddingLeft:10}}>
+                <TouchableOpacity
+                     onPress={() =>{this.props.navigation.navigate('First')}}>
+                     <View>
+                                    <Image
+                                        style={{height:20,width:20,}}
+                                        source={require('../Images/arrow-down.png')} />
+                                </View>
+                            </TouchableOpacity>
+                            </View>
              <View>
                     {/* <SearchBar
                             round
@@ -54,7 +64,7 @@ export default class Location extends Component{
                           <TextInput style={styles.searchText}
                            placeholder=' Search for your delivery ar... '
                              placeholderTextColor='grey'
-                             onChangeText={(Text) => this.setState({input: Text})} />
+                         />
 
 
 

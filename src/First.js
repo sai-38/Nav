@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Image, Linking, ScrollView, Picker,Text,Modal,TouchableHighlight, TouchableOpacity, View, TextInput,FlatList} from 'react-native';
+import { Image, Linking, ScrollView, Picker,Text,Modal, TouchableOpacity, View, TextInput,FlatList} from 'react-native';
 import { SearchBar } from 'react-native-elements';
-import  Swiper  from 'react-native-swiper';
-import ModalDropdown from 'react-native-modal-dropdown';
-
 
 export default class First extends Component {
     state = {
         modalVisible: false,
+        modalVisible1:false
       };
     
       setModalVisible(visible) {
         this.setState({modalVisible: visible});
       }
-    
+      setModalVisible1(visible) {
+        this.setState({modalVisible1: visible});
+      }
 
 
    
@@ -155,12 +155,13 @@ export default class First extends Component {
                             <Text style={{ fontWeight: 'bold', fontSize: 13 }}>   44 PLACES</Text>
                         </View>
             
+                        <View style={{flexDirection:'row'}}>
                         <View>
                         <TouchableOpacity
                                     onPress={() => {
                                           this.setModalVisible(true);
                                               }}>
-                            <Text style={{ fontWeight: 'bold', fontSize: 13, color: 'green', }}>FILTERS  RELEVANCE ↓   </Text>
+                            <Text style={{ fontWeight: 'bold', fontSize: 13, color: 'green', }}>FILTERS  </Text>
                            </TouchableOpacity>
                            
                             {/* <ModalDropdown 
@@ -182,30 +183,207 @@ export default class First extends Component {
           <View      style={{
           flexDirection: 'column',
           backgroundColor: 'white',
-          height:400,top:160
+          height:410,top:160,paddingLeft:5,elevation:30
           }}>
-            <View>
+            <View style={{paddingTop:5}}>
                 <TouchableOpacity
                      onPress={() =>{
                         this.setModalVisible(!this.state.modalVisible);
                      this.props.navigation.navigate('First')}}>
-                                <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'red', }}>Close  </Text>
+                                <Text style={{ fontWeight: '500', fontSize: 15, color: 'red', }}>Close  </Text>
                             </TouchableOpacity>
-
-              <TouchableHighlight
+                            <View style={styles.firstMargin}>
+                  </View>
+               <View style={{paddingTop:5}}>
+              <TouchableOpacity
                 onPress={() => {
                   this.setModalVisible(!this.state.modalVisible);
                 }}>
-                <Text>Hide Modal</Text>
-              </TouchableHighlight>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Accpets Online Payment</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Pure Vegetarian</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}>Zomato Treats Partners</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:15}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '700', fontSize: 17, color: 'black', }}> Cuisines</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Afghani</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> American</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Andhra</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Hyderabadi</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> North Indian</Text>
+              </TouchableOpacity>
+              </View>
             </View>
           </View>
         </Modal>
       </View>
+      </View>
+      <View>
+      <TouchableOpacity
+                                    onPress={() => {
+                                          this.setModalVisible1(true);
+                                              }}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 13, color: 'green', }}> RELEVANCE ↓   </Text>
+                           </TouchableOpacity>
 
+                       <View>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          
+          visible={this.state.modalVisible1}
+          onRequestClose={() => {
+            alert('Choose any!');
+          }}>
+          <View      style={{
+          flexDirection: 'column',
+          backgroundColor: 'white',
+          height:210,top:360,paddingLeft:5,elevation:10
+          }}>
+            <View style={{paddingTop:5}}>
+                <TouchableOpacity
+                     onPress={() =>{
+                        this.setModalVisible1(!this.state.modalVisible1);
+                     this.props.navigation.navigate('First')}}>
+                                <Text style={{ fontWeight: '500', fontSize: 15, color: 'red', }}> Close  </Text>
+                            </TouchableOpacity>
+                            <View style={styles.firstMargin}>
+                  </View>
+               <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Relevance </Text>
+              </TouchableOpacity>
+              </View>
+             
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Rating</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Time</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Cost(Low to High)</Text>
+              </TouchableOpacity>
+              </View>
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> Cost(High to Low)</Text>
+              </TouchableOpacity>
+              </View>
+            
+              <View style={styles.firstMargin}>
+                  </View>
+                  <View style={{paddingTop:5}}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible1(!this.state.modalVisible1);
+                }}>
+                <Text style={{ fontWeight: '500', fontSize: 13, color: '#171933', }}> North Indian</Text>
+              </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+        </View>
 
-
-
+</View>
                         </View>
                     
                     </View>
@@ -449,5 +627,12 @@ const styles = {
         marginRight: 10,
         marginTop: 10,
         marginBottom: 10
+    },
+    firstMargin: {
+        borderWidth: 1,
+        borderColor: '#e1e1e1',
+        
+        marginRight:10,
+        marginTop:10
     },
 }

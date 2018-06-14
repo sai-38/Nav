@@ -13,8 +13,12 @@ import Cart from './src/Cart';
 import Support from './src/Support';
 import Account from './src/Account';
 import Location from './src/Location';
+import Login from './Login';
 import { SearchBar } from 'react-native-elements';
-import {createStackNavigator,TabNavigator} from 'react-navigation';
+import {createStackNavigator,TabNavigator,StackNavigator} from 'react-navigation';
+
+
+
 
 const RootTabs= TabNavigator({
    
@@ -94,5 +98,18 @@ const RootTS=createStackNavigator({
         screen:Support
     }
 });
+const RootS= StackNavigator({
+    Login: {
+        screen: Login,
+      navigationOptions:{
+        header:null
+      },
+       },
+       Router: { 
+        screen: RootTS,
+       navigationOptions:{
+         header:null
+       }, }
+})
 
-export default RootTS;
+export default RootS;
