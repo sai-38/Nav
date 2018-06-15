@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
-import { Image, Linking, ScrollView, Picker,Text,Modal, TouchableOpacity, View, TextInput,FlatList} from 'react-native';
-import { SearchBar } from 'react-native-elements';
+import { Image, Linking, Modal, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import ImagePicker, { launchCamera } from 'react-native-image-picker';
+
+
+
+
+// var options = {
+//     title: 'Select Avatar',
+//     customButtons: [
+//       {name: 'fb', title: 'Choose Photo from Facebook'},
+//     ],
+//     storageOptions: {
+//       skipBackup: true,
+//       path: 'images'
+//     }
+//   };
 
 export default class First extends Component {
     state = {
@@ -15,6 +29,37 @@ export default class First extends Component {
         this.setState({modalVisible1: visible});
       }
 
+
+
+    //   state = {
+    //     avatarSource:''
+    //   }
+
+    //   cam()
+    //   {
+    //       ImagePicker.showImagePicker(options, (response) => {
+    //          console.log('Response = ', response);
+      
+    //         if (response.didCancel) {
+    //       console.log('User cancelled image picker');
+    //     }
+    //     else if (response.error) {
+    //       console.log('ImagePicker Error: ', response.error);
+    //     }
+    //     else if (response.customButton) {
+    //       console.log('User tapped custom button: ', response.customButton);
+    //     }
+    //     else {
+    //       let source = { uri: response.uri };
+      
+      
+    //       this.setState({
+    //         avatarSource: source
+    //       });
+    //     }
+    //   });
+    //   }
+      
 
    
 //     state={
@@ -48,6 +93,11 @@ export default class First extends Component {
                     <Text style={styles.headerText}>zomato</Text>
                 </View>
 
+
+     
+
+
+
                 <View style={{ backgroundColor: 'white' }} >
                     <Text style={{ fontSize: 13, marginLeft: 10, marginTop: 2 }}>DELIVERING FOOD TO </Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 2 }} >
@@ -80,6 +130,15 @@ export default class First extends Component {
                             placeholderTextColor='grey'
                         />
                     </View>
+
+
+                    {/* <View>
+    <TouchableOpacity onPress={()=>this.cam()}>
+      <Text>Open Camera</Text>
+    </TouchableOpacity>
+    <Image source={this.state.avatarSource} style={{height:50,width:50}} />
+    </View> */}
+
                 </View>
                 <ScrollView 
                 style={{ flex: 1 }}>
@@ -87,6 +146,7 @@ export default class First extends Component {
                 style={{ flex: 1 }}>
 
 
+ 
                     
 
                         {/* <Swiper style={{flex:1,height:100}}
@@ -171,15 +231,17 @@ export default class First extends Component {
                             options={['Hyderabadi', 'Italian','Indian','Mexican','Oriya','Rajasthani','Spanish','Thai']}/> */}
     
 
-                       <View>
+                       
+         <View> 
         <Modal
           animationType="slide"
           transparent={true}
-          
+       
           visible={this.state.modalVisible}
           onRequestClose={() => {
             alert('Choose any!');
           }}>
+          
           <View      style={{
           flexDirection: 'column',
           backgroundColor: 'white',
@@ -284,6 +346,7 @@ export default class First extends Component {
               </View>
             </View>
           </View>
+      
         </Modal>
       </View>
       </View>

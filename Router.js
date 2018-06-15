@@ -14,6 +14,7 @@ import Support from './src/Support';
 import Account from './src/Account';
 import Location from './src/Location';
 import Login from './Login';
+import camera from './src/camera';
 import { SearchBar } from 'react-native-elements';
 import {createStackNavigator,TabNavigator,StackNavigator} from 'react-navigation';
 
@@ -52,7 +53,7 @@ const RootTabs= TabNavigator({
                 tabBarIcon: (<Image style={{width:25,height:25,resizeMode:'contain'}} source={require('./Images/ac.jpg')}/>),
             }
         },
-        
+       
           
     },{
         tabBarPosition:'bottom',
